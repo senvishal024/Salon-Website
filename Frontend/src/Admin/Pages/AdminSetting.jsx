@@ -13,7 +13,7 @@ function Settings() {
     fetchDetail();
   },[]);
   const fetchDetail=async ()=>{
-    const response=await fetch("http://localhost:5000/admin/show-details",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/show-details",{
       credentials:"include",
       headers:{
         "Content-Type":"application/json",
@@ -30,7 +30,7 @@ function Settings() {
     if(!confirmUpdate){
       return;
     }
-    const response=await fetch("http://localhost:5000/admin/update-details",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/update-details",{
       method:"PUT",
       credentials:"include",
       headers:{
@@ -50,7 +50,7 @@ function Settings() {
   }
   const passwordSubmit=async ()=>{
      console.log("PASSWORD SUBMIT FUNCTION HIT");
-    const response=await fetch("http://localhost:5000/admin/update-password",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/update-password",{
       method:"PUT",
       credentials:"include",
       headers:{

@@ -71,7 +71,7 @@ function Appointments() {
   })
 
   const fetchDetail=async ()=>{
-    const response=await fetch("http://localhost:5000/admin/show-appoinment",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/show-appoinment",{
       credentials:"include",
       headers:{
         "Content-Type":"application/json",
@@ -84,7 +84,7 @@ function Appointments() {
 
   }
   const statusupdate=async (id,status)=>{
-    const response=await fetch(`http://localhost:5000/admin/status-update/${id}`,{
+    const response=await fetch(`https://new-generation-salon-api.onrender.com/admin/status-update/${id}`,{
       method:"PATCH",
       credentials:"include",
       headers:{
@@ -97,7 +97,7 @@ function Appointments() {
     fetchDetail();
   }
   const handleDelete=async (id)=>{
-    const response=await fetch(`http://localhost:5000/admin/delete-appoinment/${id}`,{
+    const response=await fetch(`https://new-generation-salon-api.onrender.com/admin/delete-appoinment/${id}`,{
       method:"DELETE",
       credentials:"include",
       headers:{

@@ -15,7 +15,7 @@ function Services() {
     fetchCountOfServices();
   },[])
   const fetchServices=async ()=>{
-    const response=await fetch("http://localhost:5000/admin/show-services",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/show-services",{
       credentials:"include",
       headers:{
         "Content-Type":"application/json",
@@ -28,7 +28,7 @@ function Services() {
 
   }
   const fetchCountOfServices=async ()=>{
-    const response=await fetch("http://localhost:5000/admin/dashboard",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/dashboard",{
       credentials:"include",
       headers:{
         "Content-Type":"applocation/json",

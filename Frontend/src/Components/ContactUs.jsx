@@ -7,7 +7,7 @@ function ContactUs() {
     e.preventDefault();
     console.log("add appoinment click")
     console.log("click before fetch")
-    const response=await fetch("http://localhost:5000/newgeneration/add-appoinment",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/newgeneration/add-appoinment",{
       method:"POST",
       credentials:"include",
       headers:{

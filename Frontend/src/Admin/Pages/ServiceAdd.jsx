@@ -12,7 +12,7 @@ function AddService() {
 
   const handleSubmit =async (e) => {
     e.preventDefault();
-    const response= await fetch("http://localhost:5000/admin/add-service",{
+    const response= await fetch("https://new-generation-salon-api.onrender.com/admin/add-service",{
         method:"POST",
         credentials:"include",
         headers:{

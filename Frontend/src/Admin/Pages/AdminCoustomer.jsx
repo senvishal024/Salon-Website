@@ -18,7 +18,7 @@ function Customers() {
   },[])
   const filterSearch=details.filter((item)=>item.name.toLowerCase().includes(search.toLowerCase()));
   const fetchDetail=async ()=>{
-    const response=await fetch("http://localhost:5000/admin/show-customer",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/show-customer",{
       credentials:"include",
       headers:{
         "Content-Type":"application/json",

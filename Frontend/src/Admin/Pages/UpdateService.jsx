@@ -12,7 +12,7 @@ function UpdateService() {
         fetchServices();
     },[])
     const fetchServices=async ()=>{
-        const response=await fetch(`http://localhost:5000/admin/show-service/${id}`,{
+        const response=await fetch(`https://new-generation-salon-api.onrender.com/admin/show-service/${id}`,{
             credentials:"include",
             headers:{
                 "Content-Type":"application/json",
@@ -26,7 +26,7 @@ function UpdateService() {
         e.preventDefault();
          console.log("ID:", id);
     console.log("Service:", service);
-        const response=await fetch(`http://localhost:5000/admin/update-service/${id}`,{
+        const response=await fetch(`https://new-generation-salon-api.onrender.com/admin/update-service/${id}`,{
             method:"PUT",
             credentials:"include",
             headers:{

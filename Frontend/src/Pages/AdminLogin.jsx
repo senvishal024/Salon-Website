@@ -9,7 +9,7 @@ function AdminLogin() {
   console.log(admin)
   const handleSubmit=async (e)=>{
     e.preventDefault();
-    const response =await fetch("http://localhost:5000/admin/login",{
+    const response =await fetch("https://new-generation-salon-api.onrender.com/admin/login",{
       method:"POST",
       credentials:"include",
       headers:{

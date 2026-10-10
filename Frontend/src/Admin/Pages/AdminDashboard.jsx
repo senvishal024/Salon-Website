@@ -42,7 +42,7 @@ const [details,setDetails]=useState();
  
 
 const fetchDetail=async ()=>{
-  const response= await fetch("http://localhost:5000/admin/dashboard",{
+  const response= await fetch("https://new-generation-salon-api.onrender.com/admin/dashboard",{
     credentials:"include",
     headers:{
       "Content-Type":"application/json",
@@ -54,7 +54,7 @@ const fetchDetail=async ()=>{
   console.log("dashboard data",data)
 }
 const fetchAppointment=async ()=>{
-  const response =await fetch("http://localhost:5000/admin/show-appoinment",{
+  const response =await fetch("https://new-generation-salon-api.onrender.com/admin/show-appoinment",{
     credentials:"include",
     headers:{
       "Content-Type":"application/json",

@@ -8,7 +8,7 @@ function InstagramStyle() {
     fetchImages();
   },[]);
   const fetchImages=async ()=>{
-    const response=await fetch("http://localhost:5000/newgeneration/show-image",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/show-image",{
       credentials:"include",
     })
     const data =await response.json();

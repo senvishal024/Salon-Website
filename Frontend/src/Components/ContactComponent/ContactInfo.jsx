@@ -5,7 +5,7 @@ function ContactInformation() {
   const [details,setDetails]=useState({name:"",phone:"",email:"",date:"",time:"",message:"",service:"",});
     const handleSubmit=async (e)=>{
       e.preventDefault();
-      const response=await fetch("http://localhost:5000/newgeneration/add-appoinment",{
+      const response=await fetch("https://new-generation-salon-api.onrender.com/newgeneration/add-appoinment",{
         method:"POST",
         credentials:"include",
         headers:{

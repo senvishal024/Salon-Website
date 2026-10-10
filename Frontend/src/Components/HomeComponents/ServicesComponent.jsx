@@ -9,7 +9,7 @@ function ServicesComponent() {
     fetchServices();
   },[])
   const fetchServices=async ()=>{
-    const response =await fetch("http://localhost:5000/newgeneration/show-services",{
+    const response =await fetch("https://new-generation-salon-api.onrender.com/newgeneration/show-services",{
       credentials:"include",
     })
     const data=await response.json();

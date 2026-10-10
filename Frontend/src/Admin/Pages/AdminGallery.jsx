@@ -17,7 +17,7 @@ function Gallery() {
     console.log("ADD IMAGE HANDLE CALLED");
     const formData= new FormData();
     formData.append('image',selectedImage);
-    const response=await fetch("http://localhost:5000/admin/image-upload",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/image-upload",{
       credentials:"include",
       method:"POST",
       headers:{
@@ -32,7 +32,7 @@ function Gallery() {
    fetchImages();
   }
   const fetchImages=async ()=>{
-    const response=await fetch("http://localhost:5000/admin/show-images",{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/admin/show-images",{
       credentials:"include",
       headers:{
         Authorization:localStorage.getItem("token")
@@ -46,7 +46,7 @@ function Gallery() {
 
   }
   const DeleteImageHandle=async (e,id)=>{
-    const response =await fetch(`http://localhost:5000/admin/delete-image/${id}`,{
+    const response =await fetch(`https://new-generation-salon-api.onrender.com/admin/delete-image/${id}`,{
       method:"DELETE",
       credentials:"include",
       headers:{
