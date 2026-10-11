@@ -1,36 +1,26 @@
 
-const nodemailer = require("nodemailer");
-require("dotenv").config();
+const { Resend } = require("resend");
 
-const transport = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.Email,
-        pass: process.env.Pass
-    }
-});
-transport.verify()
-    .then(() => console.log("SMTP CONNECTION SUCCESS"))
-    .catch((err) => console.error("SMTP CONNECTION ERROR:", err));
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendEmail = async (to, subject, text) => {
     try {
         console.log("Sending email to:", to);
-        console.log("Email account configured:", !!process.env.Email);
-        console.log("Email password configured:", !!process.env.Pass);
 
-        const info = await transport.sendMail({
-            from: process.env.Email,
-            to,
+        const { data, error } = await resend.emails.send({
+            from: "Salon App <onboarding@resend.dev>",
+            to: [to],
             subject,
             text
         });
 
-        console.log("EMAIL SENT:", info.messageId);
-        console.log("ACCEPTED:", info.accepted);
-        console.log("REJECTED:", info.rejected);
+        if (error) {
+            console.error("RESEND EMAIL ERROR:", error);
+            throw new Error(error.message || "Email sending failed");
+        }
 
-        return info;
+        console.log("EMAIL SENT:", data?.id);
+        return data;
     } catch (error) {
         console.error("EMAIL ERROR:", error.message);
         throw error;
