@@ -84,12 +84,13 @@ Salon Website
 
      res.json(details);
     }
-    catch(err){
-        res.json({
-            message:"Error",
-            error:err.message
-        })
-    }
+    catch (err) {
+    console.error("APPOINTMENT ERROR:", err);
+    res.status(500).json({
+        message: "Error",
+        error: err.message
+    });
+}
 }
 const showAppoinment=async (req,res)=>{
     try{
