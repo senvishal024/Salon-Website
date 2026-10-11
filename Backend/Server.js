@@ -15,10 +15,14 @@ const allowedOrigins = [
     process.env.FRONTEND_URL
 ].filter(Boolean);
 
+
 app.use(cors({
-    origin: allowedOrigins,
+    origin: "https://new-generation-salon.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
+
 
 const PORT = process.env.PORT || 5000;
 
