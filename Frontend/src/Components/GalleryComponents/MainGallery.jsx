@@ -17,7 +17,6 @@ function MainGallery() {
     })
     const data =await response.json();
     setGallerys(data.gallery);
-    setDetails(data)
     console.log("total",data.totalImage)
     console.log(data)
 
@@ -122,7 +121,7 @@ function MainGallery() {
 
             {/* Image 2 */}
             {gallerys.map((item)=>(
-            <div className="group relative overflow-hidden">
+            <div className="group relative overflow-hidden" key={item._id}>
               <img
                 src={item.imageUrl}
                 alt={item.title}
