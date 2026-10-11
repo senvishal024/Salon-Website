@@ -121,7 +121,7 @@ function MainGallery() {
 
             {/* Image 2 */}
            {/*  {gallerys.map((item)=>( */}
-            <div className="group relative overflow-hidden" key={item._id}>
+            <div className="group relative overflow-hidden" /* key={item._id} */>
               <img
                 src={galleryData[0].image}
                 alt={galleryData[0].title}
