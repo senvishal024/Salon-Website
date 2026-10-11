@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 function MainGallery() {
-  const [gallerys,setGallerys]=useState([]);
+  /* const [gallerys,setGallerys]=useState([]);
     useEffect(()=>{
       fetchImages();
     },[]);
@@ -20,7 +20,7 @@ function MainGallery() {
     console.log("total",data.totalImage)
     console.log(data)
 
-  }
+  } */
   const galleryData = [
     {
       id: 1,
@@ -120,11 +120,11 @@ function MainGallery() {
           <div className="grid gap-5 md:col-span-1 lg:col-span-7 lg:grid-cols-2">
 
             {/* Image 2 */}
-            {gallerys.map((item)=>(
+           {/*  {gallerys.map((item)=>( */}
             <div className="group relative overflow-hidden" key={item._id}>
               <img
-                src={item.imageUrl}
-                alt={item.title}
+                src={galleryData[0].image}
+                alt={galleryData[0].title}
                 className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-110"
               />
 
@@ -132,15 +132,15 @@ function MainGallery() {
 
               <div className="absolute bottom-0 left-0 w-full p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E5B86A]">
-                  {item.category}
+                    {galleryData[0].category}
                 </p>
 
                 <h3 className="mt-2 text-xl font-semibold text-[#F1F4EF]">
-                  {item.title}
+                  {galleryData[0].title}
                 </h3>
               </div>
             </div>
-            ))}
+           {/*  ))} */}
 
             {/* Image 3 */}
             <div className="group relative overflow-hidden ">
