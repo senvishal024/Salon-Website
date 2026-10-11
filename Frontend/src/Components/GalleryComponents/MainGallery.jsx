@@ -1,6 +1,24 @@
 import React from "react";
 
 function MainGallery() {
+  const [gallerys,setGallerys]=useState([]);
+    useEffect(()=>{
+      fetchImages();
+    },[]);
+  const fetchImages=async ()=>{
+    const response=await fetch("https://new-generation-salon-api.onrender.com/newgeneration/show-images",{
+      credentials:"include",
+      headers:{
+        Authorization:localStorage.getItem("token")
+      }
+    })
+    const data =await response.json();
+    setGallerys(data.gallery);
+    setDetails(data)
+    console.log("total",data.totalImage)
+    console.log(data)
+
+  }
   const galleryData = [
     {
       id: 1,
@@ -100,10 +118,11 @@ function MainGallery() {
           <div className="grid gap-5 md:col-span-1 lg:col-span-7 lg:grid-cols-2">
 
             {/* Image 2 */}
+            {gallerys.map((item)=>(
             <div className="group relative overflow-hidden">
               <img
-                src={galleryData[1].image}
-                alt={galleryData[1].title}
+                src={item.imageUrl}
+                alt={item.title}
                 className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-110"
               />
 
@@ -111,14 +130,15 @@ function MainGallery() {
 
               <div className="absolute bottom-0 left-0 w-full p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E5B86A]">
-                  {galleryData[1].category}
+                  {item.category}
                 </p>
 
                 <h3 className="mt-2 text-xl font-semibold text-[#F1F4EF]">
-                  {galleryData[1].title}
+                  {item.title}
                 </h3>
               </div>
             </div>
+            ))}
 
             {/* Image 3 */}
             <div className="group relative overflow-hidden ">

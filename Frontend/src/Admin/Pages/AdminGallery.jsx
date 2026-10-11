@@ -7,6 +7,7 @@ import {
   HiOutlineTrash,
 } from "react-icons/hi";
 
+
 function Gallery() {
   const [details,setDetails]=useState({});
   const [gallerys,setGallerys]=useState([]);
