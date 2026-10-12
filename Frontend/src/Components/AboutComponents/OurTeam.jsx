@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 function OurTeam() {
   const team = [
     {
@@ -85,21 +85,21 @@ function OurTeam() {
                       href="#"
                       className="flex h-9 w-9 items-center justify-center rounded-full border border-[#B8C7C1]/20 text-sm text-[#B8C7C1] transition duration-300 hover:border-[#E5B86A] hover:bg-[#E5B86A] hover:text-[#092328]"
                     >
-                      f
+                      <FaInstagram/>
                     </a>
 
                     <a
                       href="#"
                       className="flex h-9 w-9 items-center justify-center rounded-full border border-[#B8C7C1]/20 text-sm text-[#B8C7C1] transition duration-300 hover:border-[#E5B86A] hover:bg-[#E5B86A] hover:text-[#092328]"
                     >
-                      in
+                      <FaFacebook/>
                     </a>
 
                     <a
                       href="#"
                       className="flex h-9 w-9 items-center justify-center rounded-full border border-[#B8C7C1]/20 text-sm text-[#B8C7C1] transition duration-300 hover:border-[#E5B86A] hover:bg-[#E5B86A] hover:text-[#092328]"
                     >
-                      ig
+                      <FaWhatsapp/>
                     </a>
                   </div>
                 </div>
